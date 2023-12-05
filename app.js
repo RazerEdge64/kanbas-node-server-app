@@ -1,28 +1,3 @@
-<<<<<<< HEAD
-import express from "express"
-import cors from "cors"
-import "dotenv/config"
-import Hello from "./hello.js"
-import Lab5 from "./lab5.js"
-
-import CourseRoutes from "./courses/routes.js"
-import ModuleRoutes from "./modules/routes.js"
-
-const app = express()
-
-app.use(cors())
-
-app.use(express.json())
-
-const PORT = 4000
-
-Hello(app)
-Lab5(app)
-CourseRoutes(app)
-ModuleRoutes(app)
-
-app.listen(process.env.PORT || PORT)
-=======
 import express from "express";
 import Hello from "./hello.js";
 import Lab5 from "./Lab5.js";
@@ -62,9 +37,9 @@ mongoose.connect(CONNECTION_STRING, {
 });
 
 app.use(cors({
-    credentials: true,
-    origin: process.env.FRONTEND_URL
-  })
+      credentials: true,
+      origin: process.env.FRONTEND_URL
+    })
 );
 
 
@@ -79,4 +54,3 @@ Lab5(app);
 Hello(app);
 
 app.listen(process.env.PORT || 4000);
->>>>>>> 3bc1e2c (server commit)
